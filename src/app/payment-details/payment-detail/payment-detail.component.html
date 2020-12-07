@@ -1,0 +1,23 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+    <div class="form-group">
+        <label for="ownerName">Owner Name:</label>
+        <input name="ownerName" #ownerName="ngModel" [(ngModel)]="service.formData.ownerName" class="form-control" placeholder="Card Owner Name" required >
+    </div>
+    <div class="form-group">
+        <label for="cardNumber">Card Number:</label>
+        <input name="cardNumber" #cardNumber="ngModel" [(ngModel)]="service.formData.cardNumber" class="form-control" placeholder="16 Digit  Card Number" required maxlength="16" minlength="16">
+    </div> 
+    <div class="row">
+        <div class="form-group col-md-7">
+            <label for="cardNumber">ExpirationDate: </label>
+            <input name="expirationDate" #expirationDate="ngModel" [(ngModel)]="service.formData.expirationDate" class="form-control" placeholder="MM/YY" required minlength="5" maxlength="5">
+        </div>
+        <div class="form-group col-md-5">
+            <label for="cardNumber">CVV:</label>
+            <input type="password" name="cvv" #cvv="ngModel" [(ngModel)]="service.formData.cvv" class="form-control" placeholder="CVV" required maxlength="8" minlength="5" >
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"> <i class="fas fa-database"></i> Submit</button>
+    </div>
+</form>

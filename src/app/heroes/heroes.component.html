@@ -1,0 +1,21 @@
+<!-- <h2>{{hero.name | uppercase}} details</h2> -->
+<div><span>id: </span>{{hero.id}}</div>
+<div>
+    <label>name:
+        <input [(ngModel)]="hero.name" placeholder="Name" type="text">
+    </label>
+    <span></span>
+    <form>
+        <label>gender:</label>
+        <select name="gender" id="select-gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </form>
+</div>
+
+<div>
+    <h2>Details</h2>
+    <p>name: {{hero.name}}</p>
+    <p>gender: {{hero.gender}}</p>
+</div>
